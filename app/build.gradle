@@ -9,6 +9,19 @@ plugins {
 }
 
 android {
+    signingConfigs{
+        def keyStorePath = "../keystore/english_pl_keystore.jks"
+
+        signingConfigs {
+            release {
+                storeFile file(keyStorePath)
+                storePassword 'englishpl123456'
+                keyAlias = 'englishpl'
+                keyPassword 'englishpl123456'
+                v2SigningEnabled true
+            }
+        }
+    }
     namespace 'com.ahmed.english_pl'
     compileSdk 33
 
@@ -58,6 +71,8 @@ dependencies {
     def rxAndroid = '2.1.1'
     def rxJava = '2.2.21'
     def convert_scalars = '2.0.1'
+    def appCenterSdkVersion = '4.4.5'
+
 
     implementation "androidx.core:core-ktx:$kotlinVersion"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -88,4 +103,7 @@ dependencies {
     // RxJava
     implementation "io.reactivex.rxjava2:rxjava:$rxJava"
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 }
