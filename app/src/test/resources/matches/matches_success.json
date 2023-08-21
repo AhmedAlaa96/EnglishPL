@@ -1,0 +1,71 @@
+{
+    "count": 1,
+    "filters": {},
+    "competition": {
+        "id": 2021,
+        "area": {
+            "id": 2072,
+            "name": "England"
+        },
+        "name": "Premier League",
+        "code": "PL",
+        "plan": "TIER_ONE",
+        "lastUpdated": "2022-03-20T08:58:54Z"
+    },
+    "matches": [
+        {
+            "id": 416384,
+            "season": {
+                "id": 1490,
+                "startDate": "2022-08-05",
+                "endDate": "2023-05-28",
+                "currentMatchday": 37
+            },
+            "utcDate": "2022-08-05T19:00:00Z",
+            "status": "FINISHED",
+            "matchday": 1,
+            "stage": "REGULAR_SEASON",
+            "group": null,
+            "lastUpdated": "2023-04-06T16:20:27Z",
+            "odds": {
+                "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+            },
+            "score": {
+                "winner": "AWAY_TEAM",
+                "duration": "REGULAR",
+                "fullTime": {
+                    "homeTeam": 0,
+                    "awayTeam": 2
+                },
+                "halfTime": {
+                    "homeTeam": 0,
+                    "awayTeam": 1
+                },
+                "extraTime": {
+                    "homeTeam": null,
+                    "awayTeam": null
+                },
+                "penalties": {
+                    "homeTeam": null,
+                    "awayTeam": null
+                }
+            },
+            "homeTeam": {
+                "id": 354,
+                "name": "Crystal Palace FC"
+            },
+            "awayTeam": {
+                "id": 57,
+                "name": "Arsenal FC"
+            },
+            "referees": [
+                {
+                    "id": 11580,
+                    "name": "Anthony Taylor",
+                    "role": "REFEREE",
+                    "nationality": "England"
+                }
+            ]
+        }
+    ]
+}

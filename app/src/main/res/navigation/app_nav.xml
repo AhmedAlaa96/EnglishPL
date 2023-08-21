@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/matchesFragment">
+
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.ahmed.english_pl.ui.matches.MatchesFragment"
+        android:label="MatchesFragment">
+        <action
+            android:id="@+id/action_matchesFilterFragment"
+            app:destination="@id/matchesFilterFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/matchesFilterFragment"
+        android:name="com.ahmed.english_pl.ui.matches.filter.MatchesFilterFragment"
+        android:label="MatchesFilterFragment">
+        <argument
+            android:name="matchesFilterData"
+            app:argType="com.ahmed.english_pl.data.models.MatchesFilterData" />
+        <action
+            android:id="@+id/action_to_matchesStatusFilterFragment"
+            app:destination="@id/matchesStatusFilterFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/matchesStatusFilterFragment"
+        android:name="com.ahmed.english_pl.ui.matches.status_filter.MatchesStatusFilterFragment"
+        android:label="MatchesStatusFilterFragment">
+        <argument
+            android:name="matchesFilterData"
+            app:argType="com.ahmed.english_pl.data.models.MatchesFilterData" />
+
+    </dialog>
+</navigation>

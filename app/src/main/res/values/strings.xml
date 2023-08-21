@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">English Premier League</string>
+    <string name="favorite">Favorite</string>
+    <string name="filter">Filter</string>
+    <string name="reset">Reset</string>
+    <string name="filterResults">Apply</string>
+    <string name="pick_a_date">Pick a date</string>
+    <string name="from">From: </string>
+    <string name="to">To: </string>
+    <string name="from_after_to">From date cannot be after to date</string>
+    <string name="status">Status: </string>
+    <string name="all">All</string>
+    <string name="some_thing_went_wrong">Something went wrong. Please try again.</string>
+    <string name="retry">Retry</string>
+    <string name="no_data">No Matches found</string>
+</resources>
