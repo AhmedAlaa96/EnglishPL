@@ -28,22 +28,22 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Sign APK
-        run: |
-          echo "${{ secrets.KEYSTORE_FILE }}" | base64 --decode > keystore.jks
-          echo "${{ secrets.KEYSTORE_PASSWORD }}" > keystore_password.txt
-          echo "${{ secrets.KEY_ALIAS }}" > key_alias.txt
-          echo "${{ secrets.KEY_PASSWORD }}" > key_password.txt
-          jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore keystore.jks -storepass $(cat keystore_password.txt) -keypass $(cat key_password.txt) app/build/outputs/apk/release/app-release-unsigned.apk $(cat key_alias.txt)
+      # - name: Sign APK
+      #   run: |
+      #     echo "${{ secrets.KEYSTORE_FILE }}" | base64 --decode > keystore.jks
+      #     echo "${{ secrets.KEYSTORE_PASSWORD }}" > keystore_password.txt
+      #     echo "${{ secrets.KEY_ALIAS }}" > key_alias.txt
+      #     echo "${{ secrets.KEY_PASSWORD }}" > key_password.txt
+      #     jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore keystore.jks -storepass $(cat keystore_password.txt) -keypass $(cat key_password.txt) app/build/outputs/apk/release/app-release-unsigned.apk $(cat key_alias.txt)
 
-      - name: Verify APK signature
-        run: jarsigner -verify -verbose app/build/outputs/apk/release/app-release-unsigned.apk
+      # - name: Verify APK signature
+      #   run: jarsigner -verify -verbose app/build/outputs/apk/release/app-release-unsigned.apk
 
-      - name: Zipalign APK
-        run: $ANDROID_HOME/build-tools/zipalign -v 4 app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/app-release-signed-aligned.apk
+      # - name: Zipalign APK
+      #   run: $ANDROID_HOME/build-tools/zipalign -v 4 app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/app-release-signed-aligned.apk
 
-      - name: Publish APK artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-release-signed-aligned.apk
-          path: app/build/outputs/apk/release/app-release-signed-aligned.apk
+      # - name: Publish APK artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: app-release-signed-aligned.apk
+      #     path: app/build/outputs/apk/release/app-release-signed-aligned.apk
